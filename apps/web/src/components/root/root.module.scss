@@ -1,0 +1,18 @@
+aside {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 20vw;
+    height: 100vh;
+    padding: .5rem;
+}
+
+main {
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 20vw;
+    width: 80vw;
+    height: 100vh;
+    padding: .5rem;
+}
