@@ -1,9 +1,9 @@
 {
   "name": "@pub-clients/source",
   "version": "0.0.0",
-  "license": "MIT",
+  "license": "GPLv3",
   "scripts": {},
-  "private": true,
+  "private": false,
   "dependencies": {
     "@tanstack/react-query": "5.52.1",
     "@tanstack/react-router": "1.50.0",
