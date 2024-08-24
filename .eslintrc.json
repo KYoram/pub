@@ -1,0 +1,91 @@
+{
+  "root": true,
+  "ignorePatterns": ["**/*"],
+  "plugins": ["@nx"],
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+      "rules": {
+        "@nx/enforce-module-boundaries": [
+          "error",
+          {
+            "allow": [],
+            "depConstraints": [
+              {
+                "sourceTag": "type:client",
+                "onlyDependOnLibsWithTags": [
+                  "type:feature"
+                ]
+              },
+              {
+                "sourceTag": "type:feature",
+                "onlyDependOnLibsWithTags": [
+                  "type:shared", 
+                  "type:ui",
+                  "type:util",
+                  "type:model",
+                  "type:api"
+                ]
+              },
+              {
+                "sourceTag": "type:ui",
+                "onlyDependOnLibsWithTags": [
+                  "type:ui",
+                  "type:util",
+                  "type:model"
+                ]
+              },
+              {
+                "sourceTag": "type:api",
+                "onlyDependOnLibsWithTags": [
+                  "type:model", 
+                  "type:util"
+                ]
+              },
+              {
+                "sourceTag": "type:util",
+                "onlyDependOnLibsWithTags": [
+                  "type:model"
+                ]
+              },
+              {
+                "sourceTag": "type:model",
+                "onlyDependOnLibsWithTags": []
+              },
+              {
+                "sourceTag": "scope:web",
+                "onlyDependOnLibsWithTags": [
+                  "scope:web",
+                  "scope:shared"
+                ]
+              },
+              {
+                "sourceTag": "scope:mobile",
+                "onlyDependOnLibsWithTags": [
+                  "scope:web",
+                  "scope:shared"
+                ]
+              },
+              {
+                "sourceTag": "scope:shared",
+                "onlyDependOnLibsWithTags": [
+                  "scope:shared"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "files": ["*.ts", "*.tsx"],
+      "extends": ["plugin:@nx/typescript"],
+      "rules": {}
+    },
+    {
+      "files": ["*.js", "*.jsx"],
+      "extends": ["plugin:@nx/javascript"],
+      "rules": {}
+    }
+  ]
+}
