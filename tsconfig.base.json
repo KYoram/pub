@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "react": [ "./node_modules/@types/react" ]
+      "@pub-clients/javascript/utils": ["libs/javascript/utils/src/index.ts"],
+      "react": ["./node_modules/@types/react"]
     }
   },
   "exclude": ["node_modules", "tmp"]

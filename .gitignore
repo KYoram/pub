@@ -21,7 +21,7 @@ node_modules
 *.sublime-workspace
 
 # IDE - VSCode
-.vscode/*
+/.vscode/*
 
 # misc
 /.sass-cache
@@ -111,3 +111,5 @@ yarn-error.log
 
 
 apps/mobile-e2e/artifacts
+.vscode
+.vscode/extensions.json
